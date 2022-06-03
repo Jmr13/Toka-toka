@@ -19,8 +19,12 @@ Then wait for a few seconds for the app installation
 
 ## Code inspirations:
 [Introduction to IndexedDB](https://web.dev/indexeddb/)
+<br />
 [IndexedDB Code Cheat Sheet](https://github.com/stevesohcot/indexeddb/blob/master/index.html)
+<br />
 [IndexedDB Library](https://github.com/jakearchibald/idb)
+<br />
 [Article from Hackernoon](https://hackernoon.com/use-indexeddb-with-idb-a-1kb-library-that-makes-it-easy-8p1f3yqq)
+<br />
 [Course by Tutorialspoint](https://www.tutorialspoint.com/html5/html5_indexeddb.htm)
 
