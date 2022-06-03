@@ -103,11 +103,6 @@ async function btnDel() {
   }).then((result) => {
     if (result.isConfirmed) {
       del(todoID);
-      Swal.fire(
-        'Deleted!',
-        'Your file has been deleted.',
-        'success'
-      )
       window.location.reload();
     }
   })
