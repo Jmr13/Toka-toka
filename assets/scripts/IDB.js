@@ -16,11 +16,17 @@ const db = await openDB(DBNAME, 1, {
 export async function get(key) {
   return (await db).get(DBOS, key);
 };
-export async function set(key, val) {
-  return (await db).put(DBOS, val, key);
+export async function set(todoID, todoTitle, todoBody) {
+  return (await db).put(DBOS, {
+    id: todoID,
+    title: todoTitle,
+    date: Date(),
+    body: todoBody,
+  })
 };
-export async function add(todoTitle, todoBody) {
+export async function add(todoID, todoTitle, todoBody) {
   return (await db).add(DBOS, {
+    id: todoID,
     title: todoTitle,
     date: Date(),
     body: todoBody,
