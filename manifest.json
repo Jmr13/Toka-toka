@@ -7,8 +7,8 @@
     "books"
   ],
   "description": "Take note of your works",
-  "theme_color": "#ff5400",
-  "background_color": "#ff5400",
+  "theme_color": "#fbb13c",
+  "background_color": "#fbb13c",
   "display": "standalone",
   "start_url": "/?home=true",
   "orientation": "portrait",
@@ -24,18 +24,6 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "./assets/pwa-assets/Screenshot1.png",
-      "sizes": "1280x720",
-      "type": "image/png"
-    },
-    {
-      "src": "./assets/pwa-assets/Screenshot2.png",
-      "sizes": "1280x720",
-      "type": "image/png"
     }
   ]
 }
