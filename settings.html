@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toka-toka</title>
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/x-icon" href="./assets/pwa-assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/pwa-assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/pwa-assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/pwa-assets/favicon-16x16.png">
+  <link rel="mask-icon" href="./assets/pwa-assets/safari-pinned-tab.svg" color="#fbb13c">
+  <meta name="msapplication-TileColor" content="#fbb13c">
+  <meta name="theme-color" content="#fbb13c">
+
+  <link rel="stylesheet" href="./assets/styles/pwa.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./assets/scripts/tailwind.config.js"></script>
+</head>
+
+<body class="dark:bg-black">
+  <main class="container mx-auto lg:w-1/2">
+    <div class="flex flex-col justify-center gap-y-5 px-5 lg:px-0">
+      <div class="flex justify-center pt-10">
+        <img src="./assets/illustrations/Logo.png" alt="Logo.png" class="w-full lg:w-1/2">
+      </div>
+      <div class="flex flex-wrap gap-y-5">
+        <h1 class="w-full text-xl font-bold dark:text-white">Preferences</h1>
+        <div class="flex items-center">
+          <button onclick="toggleDarkMode" id="toggleDarkMode"
+            class="p-2 cursor-pointer shadow-md rounded-xl bg-black fill-white text-white font-bold dark:bg-white dark:text-black">On</button>
+          <h1 class="ml-2 dark:text-white">Dark Mode</h1>
+        </div>
+      </div>
+      <div class="flex flex-col items-center gap-y-5 mb-32 lg:mb-0">
+        <nav
+          class="fixed lg:relative items-center justify-around w-full bottom-0 z-10 py-1 bg-black dark:bg-white rounded-t-2xl">
+          <div class="flex items-center justify-around p-2">
+            <a href="index.html" class="fill-white dark:fill-black">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path
+                  d="M21 20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.49a1 1 0 0 1 .386-.79l8-6.222a1 1 0 0 1 1.228 0l8 6.222a1 1 0 0 1 .386.79V20zm-2-1V9.978l-7-5.444-7 5.444V19h14z" />
+              </svg>
+            </a>
+            <a href="settings.html" class="fill-white dark:fill-black">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path
+                  d="M8.686 4l2.607-2.607a1 1 0 0 1 1.414 0L15.314 4H19a1 1 0 0 1 1 1v3.686l2.607 2.607a1 1 0 0 1 0 1.414L20 15.314V19a1 1 0 0 1-1 1h-3.686l-2.607 2.607a1 1 0 0 1-1.414 0L8.686 20H5a1 1 0 0 1-1-1v-3.686l-2.607-2.607a1 1 0 0 1 0-1.414L4 8.686V5a1 1 0 0 1 1-1h3.686zM6 6v3.515L3.515 12 6 14.485V18h3.515L12 20.485 14.485 18H18v-3.515L20.485 12 18 9.515V6h-3.515L12 3.515 9.515 6H6zm6 10a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
+              </svg>
+            </a>
+          </div>
+        </nav>
+      </div>
+
+    </div>
+  </main>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="module" src="./assets/scripts/IDB.js"></script>
+  <script type="module" src="./assets/scripts/settings.js"></script>
+</body>
+
+</html>

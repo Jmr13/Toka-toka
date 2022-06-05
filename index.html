@@ -16,91 +16,86 @@
   <meta name="msapplication-TileColor" content="#fbb13c">
   <meta name="theme-color" content="#fbb13c">
 
-  <link rel="stylesheet" href="./assets/styles/main.css">
+  <link rel="stylesheet" href="./assets/styles/pwa.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./assets/scripts/tailwind.config.js"></script>
 </head>
 
-<body>
+<body class="dark:bg-black">
   <main class="container mx-auto lg:w-1/2">
     <div class="flex flex-col justify-center gap-y-5 px-5 lg:px-0">
-      <div class="flex justify-center">
+      <div class="flex flex-col items-center">
         <img src="./assets/illustrations/TodoApp.svg" alt="Todo.svg" class="w-full lg:w-1/2">
       </div>
       <div class="flex flex-wrap justify-around gap-y-5">
-        <h1 class="w-full text-xl font-bold">Categories</h1>
-        <div class="flex flex-col items-center gap-y-2 cursor-pointer">
-          <div class="p-4 rounded-xl border-2 border-gray-200 fill-teal-500">
+        <h1 class="w-full text-xl font-bold dark:text-white">Categories</h1>
+
+        <div id="btnPersonal" class="flex flex-col items-center gap-y-2 cursor-pointer">
+          <button class="p-4 rounded-xl border-2 border-gray-200 fill-emerald-500" value="Personal">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32">
               <path
                 d="M11 14.062V20h2v-5.938c3.946.492 7 3.858 7 7.938H4a8.001 8.001 0 0 1 7-7.938zM12 13c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6z" />
             </svg>
-          </div>
-          <h6 class="font-semibold">Personal</h6>
+          </button>
+          <h6 class="font-semibold dark:text-white">Personal</h6>
         </div>
-        <div class="flex flex-col items-center gap-y-2 cursor-pointer">
-          <div class="p-4 rounded-xl border-2 border-gray-200 fill-rose-500">
+
+        <div id="btnHealth" class="flex flex-col items-center gap-y-2 cursor-pointer">
+          <button class="p-4 rounded-xl border-2 border-gray-200 fill-rose-500" value="Health">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32">
               <path fill="none" d="M0 0H24V24H0z" />
               <path
                 d="M20 2c.552 0 1 .448 1 1v18c0 .552-.448 1-1 1H6c-.552 0-1-.448-1-1v-2H3v-2h2v-2H3v-2h2v-2H3V9h2V7H3V5h2V3c0-.552.448-1 1-1h14zm-6 6h-2v3H9v2h2.999L12 16h2l-.001-3H17v-2h-3V8z" />
             </svg>
-          </div>
-          <h6 class="font-semibold">Health</h6>
+          </button>
+          <h6 class="font-semibold dark:text-white">Health</h6>
         </div>
 
-        <div class="flex flex-col items-center gap-y-2 cursor-pointer">
-          <div class="p-4 rounded-xl border-2 border-gray-200 fill-emerald-500">
+        <div id="btnWork" class="flex flex-col items-center gap-y-2 cursor-pointer">
+          <button class="p-4 rounded-xl border-2 border-gray-200 fill-sky-500" value="Work">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32">
               <path fill="none" d="M0 0H24V24H0z" />
               <path
                 d="M15 3c.552 0 1 .448 1 1v2h5c.552 0 1 .448 1 1v13c0 .552-.448 1-1 1H3c-.552 0-1-.448-1-1V7c0-.552.448-1 1-1h5V4c0-.552.448-1 1-1h6zM8 8H6v11h2V8zm10 0h-2v11h2V8zm-4-3h-4v1h4V5z" />
             </svg>
-          </div>
-          <h6 class="font-semibold">Work</h6>
+          </button>
+          <h6 class="font-semibold dark:text-white">Work</h6>
         </div>
 
-        <div class="flex flex-col items-center gap-y-2 cursor-pointer">
-          <div class="p-4 rounded-xl border-2 border-gray-200 fill-orange-500">
+        <div id="btnShopping" class="flex flex-col items-center gap-y-2 cursor-pointer">
+          <button class="p-4 rounded-xl border-2 border-gray-200 fill-orange-500" value="Shopping">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32">
               <path fill="none" d="M0 0h24v24H0z" />
               <path
                 d="M6 9h13.938l.5-2H8V5h13.72a1 1 0 0 1 .97 1.243l-2.5 10a1 1 0 0 1-.97.757H5a1 1 0 0 1-1-1V4H2V2h3a1 1 0 0 1 1 1v6zm0 14a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm12 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4z" />
             </svg>
-          </div>
-          <h6 class="font-semibold">Shopping</h6>
+          </button>
+          <h6 class="font-semibold dark:text-white">Shopping</h6>
         </div>
 
       </div>
 
       <div class="flex flex-col items-center gap-y-5 mb-32 lg:mb-0">
-        <h1 class="w-full text-xl font-bold" id="TodoQuantity"></h1>
-
-        <div id="todoDiv" class="flex flex-col items-center gap-y-3 w-full">
-
+        <h1 class="w-full text-xl font-bold dark:text-white" id="TodoQuantity"></h1>
+        <div id="todoDiv" class="flex flex-col items-center gap-y-3 w-full overflow-y-scroll h-auto max-h-48">
+          <!-- TodoList -->
         </div>
-
-        <nav class="fixed lg:relative items-center justify-around w-full bottom-0 z-10 bg-black fill-white py-1">
+        <nav
+          class="fixed lg:relative items-center justify-around w-full bottom-0 z-10 py-1 bg-black dark:bg-white rounded-t-2xl">
           <div class="flex items-center justify-around p-2">
-            <div class="cursor-pointer">
+            <a href="index.html" class="fill-white dark:fill-black">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                 <path fill="none" d="M0 0h24v24H0z" />
                 <path
-                  d="M21 20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.49a1 1 0 0 1 .386-.79l8-6.222a1 1 0 0 1 1.228 0l8 6.222a1 1 0 0 1 .386.79V20zm-2-1V9.978l-7-5.444-7 5.444V19h14z"
-                  fill="rgba(255,255,255,1)" />
+                  d="M21 20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.49a1 1 0 0 1 .386-.79l8-6.222a1 1 0 0 1 1.228 0l8 6.222a1 1 0 0 1 .386.79V20zm-2-1V9.978l-7-5.444-7 5.444V19h14z" />
               </svg>
-            </div>
-            <button id="btnAdd">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36">
-                <path
-                  d="M11 11V7h2v4h4v2h-4v4h-2v-4H7v-2h4zm1 11C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16z" />
-              </svg>
-            </button>
-            <div class="cursor-pointer">
+            </a>
+            <a href="settings.html" class="fill-white dark:fill-black">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                <path fill="none" d="M0 0h24v24H0z" />
                 <path
                   d="M8.686 4l2.607-2.607a1 1 0 0 1 1.414 0L15.314 4H19a1 1 0 0 1 1 1v3.686l2.607 2.607a1 1 0 0 1 0 1.414L20 15.314V19a1 1 0 0 1-1 1h-3.686l-2.607 2.607a1 1 0 0 1-1.414 0L8.686 20H5a1 1 0 0 1-1-1v-3.686l-2.607-2.607a1 1 0 0 1 0-1.414L4 8.686V5a1 1 0 0 1 1-1h3.686zM6 6v3.515L3.515 12 6 14.485V18h3.515L12 20.485 14.485 18H18v-3.515L20.485 12 18 9.515V6h-3.515L12 3.515 9.515 6H6zm6 10a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" />
               </svg>
-            </div>
+            </a>
           </div>
         </nav>
       </div>
@@ -109,6 +104,7 @@
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script type="module" src="./assets/scripts/IDB.js"></script>
   <script type="module" src="./assets/scripts/main.js"></script>
+  <script type="module" src="./assets/scripts/settings.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/service-worker.js');

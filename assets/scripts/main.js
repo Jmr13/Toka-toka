@@ -13,7 +13,7 @@ const todoCreateElements = (title, id) => {
   childDiv.setAttribute("class", "flex justify-between items-center border-2 border-gray-200 w-full lg:w-4/5 p-5 rounded-xl")
 
   let todoTitle = document.createElement("h1");
-  todoTitle.setAttribute("class", "font-bold");
+  todoTitle.setAttribute("class", "font-bold dark:text-white");
   todoTitle.textContent = title;
 
   let buttonDiv = document.createElement("div");
@@ -53,28 +53,39 @@ const QTodo = document.querySelector("#TodoQuantity");
 QTodo.textContent = `You have ${QofAllKeys} task(s)`;
 
 // Button Functions
-const addButton = document.querySelector("#btnAdd");
-addButton.addEventListener("click", btnAdd);
+const addButtonPersonal = document.querySelector("#btnPersonal");
+const addButtonHealth = document.querySelector("#btnHealth");
+const addButtonWork = document.querySelector("#btnWork");
+const addButtonShopping = document.querySelector("#btnShopping");
+
+addButtonPersonal.addEventListener("click", btnAdd);
+addButtonHealth.addEventListener("click", btnAdd);
+addButtonWork.addEventListener("click", btnAdd);
+addButtonShopping.addEventListener("click", btnAdd);
+
 // Wrapper for Todo List
 const wrapper = document.querySelector("#todoDiv");
 wrapper.addEventListener("click", btnEditDelete);
 
-async function btnAdd() {
+async function btnAdd(event) {
+  const btnCategory = event.srcElement.value;
+  console.log(btnCategory)
   const { value: Todo } = await Swal.fire({
-    title: 'Add Todo',
+    title: `Add ${btnCategory} Todo`,
     input: 'text',
     inputLabel: 'Create a new task to be added to your Todo List',
     inputPlaceholder: 'Input new Todo',
     showCancelButton: true,
+    confirmButtonText: 'Add'
   })
   if (Todo) {
-    console.log(getAllKeys.length)
-    add(getAllKeys.length, Todo, Todo);
+    add(getAllKeys.length, btnCategory, Todo, Todo);
     Swal.fire({
       icon: 'success',
       text: 'Successfully added a Todo',
       title: 'Successful',
       confirmButtonText: 'Great!',
+      allowOutsideClick: false
     }).then((result) => {
       if (result.isConfirmed) {
         window.location.reload();
@@ -103,6 +114,7 @@ async function btnEditDelete(event) {
         text: 'Successfully edited the informations',
         title: 'Successful',
         confirmButtonText: 'Great!',
+        allowOutsideClick: false
       }).then((result) => {
         if (result.isConfirmed) {
           window.location.reload();
