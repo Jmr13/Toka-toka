@@ -21,17 +21,17 @@
   <script src="./assets/scripts/tailwind.config.js"></script>
 </head>
 
-<body class="dark:bg-black">
+<body class="dark:bg-[#140c00]">
   <main class="container mx-auto lg:w-1/2">
     <div class="flex flex-col justify-center gap-y-5 px-5 lg:px-0">
       <div class="flex flex-col items-center">
         <img src="./assets/illustrations/TodoApp.svg" alt="Todo.svg" class="w-full lg:w-1/2">
       </div>
       <div class="flex flex-wrap justify-around gap-y-5">
-        <h1 class="w-full text-xl font-bold dark:text-white">Categories</h1>
+        <h1 class="w-full text-xl font-bold dark:text-white">Select a category</h1>
 
         <div id="btnPersonal" class="flex flex-col items-center gap-y-2 cursor-pointer">
-          <button class="p-4 rounded-xl border-2 border-gray-200 fill-emerald-500" value="Personal">
+          <button class="p-4 rounded-xl border-2 border-gray-200 bg-[#fbb13cff] fill-white" value="Personal">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32">
               <path
                 d="M11 14.062V20h2v-5.938c3.946.492 7 3.858 7 7.938H4a8.001 8.001 0 0 1 7-7.938zM12 13c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6z" />
@@ -41,7 +41,7 @@
         </div>
 
         <div id="btnHealth" class="flex flex-col items-center gap-y-2 cursor-pointer">
-          <button class="p-4 rounded-xl border-2 border-gray-200 fill-rose-500" value="Health">
+          <button class="p-4 rounded-xl border-2 border-gray-200 bg-[#fbb13cff] fill-white" value="Health">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32">
               <path fill="none" d="M0 0H24V24H0z" />
               <path
@@ -52,7 +52,7 @@
         </div>
 
         <div id="btnWork" class="flex flex-col items-center gap-y-2 cursor-pointer">
-          <button class="p-4 rounded-xl border-2 border-gray-200 fill-sky-500" value="Work">
+          <button class="p-4 rounded-xl border-2 border-gray-200 bg-[#fbb13cff] fill-white" value="Work">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32">
               <path fill="none" d="M0 0H24V24H0z" />
               <path
@@ -63,7 +63,7 @@
         </div>
 
         <div id="btnShopping" class="flex flex-col items-center gap-y-2 cursor-pointer">
-          <button class="p-4 rounded-xl border-2 border-gray-200 fill-orange-500" value="Shopping">
+          <button class="p-4 rounded-xl border-2 border-gray-200 bg-[#fbb13cff] fill-white" value="Shopping">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32" height="32">
               <path fill="none" d="M0 0h24v24H0z" />
               <path
@@ -77,7 +77,7 @@
 
       <div class="flex flex-col items-center gap-y-5 mb-32 lg:mb-0">
         <h1 class="w-full text-xl font-bold dark:text-white" id="TodoQuantity"></h1>
-        <div id="todoDiv" class="flex flex-col items-center gap-y-3 w-full overflow-y-scroll h-auto max-h-48">
+        <div id="todoDiv" class="flex flex-col items-center gap-y-3 w-full lg:overflow-y-scroll lg:h-auto lg:max-h-60">
           <!-- TodoList -->
         </div>
         <nav

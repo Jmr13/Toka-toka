@@ -25,11 +25,20 @@ export async function set(todoID, todoCategory, todoTitle, todoBody) {
   })
 };
 export async function add(todoID, todoCategory, todoTitle, todoBody) {
+  const monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+  const date = new Date();
+  const currentYear = date.getFullYear();
+  const currentMonth = monthNames[date.getMonth()];
+  const today = date.getDate();
+  const time = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+
   return (await db).add(DBOS, {
     id: todoID,
     category: todoCategory,
     title: todoTitle,
-    date: Date(),
+    date: `${currentMonth} ${today} ${currentYear}  ${time} `,
     body: todoBody,
   })
 };
@@ -49,9 +58,3 @@ export async function getAll() {
   return (await db).getAll(DBOS);
 };
 
-
-
-// db.getAll('Todo').then("Values: " + console.log);
-
-// db.count('Todo').then(e => console.log(e));
-// await db.add('Todo', { id: 'Message001', title: 'Article 1', date: new Date('2019-01-01'), body: '…', });

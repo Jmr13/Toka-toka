@@ -3,7 +3,7 @@ tailwind.config = {
   theme: {
     extend: {
       colors: {
-        white: '',
+        main: '#d81159ff',
       }
     }
   },
@@ -12,3 +12,5 @@ tailwind.config = {
   },
   plugins: [],
 }
+
+// 218380ff   73d2deff  d81159ff  8f2d56ff
