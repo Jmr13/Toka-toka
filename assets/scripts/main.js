@@ -58,7 +58,6 @@ const todoCreateElements = (id, category, title, date) => {
 // Get All of Todos in IndexedDB and Display 
 const getAllKeys = await getAll();
 getAllKeys.forEach(key => {
-  console.log(key)
   todoCreateElements(key.id, key.category, key.body, key.date);
 });
 
@@ -84,7 +83,6 @@ wrapper.addEventListener("click", btnEditDelete);
 
 async function btnAdd(event) {
   const btnCategory = event.srcElement.value;
-  console.log(btnCategory)
   const { value: Todo } = await Swal.fire({
     title: `Add ${btnCategory} Todo`,
     input: 'text',
@@ -112,7 +110,6 @@ async function btnAdd(event) {
 async function btnEditDelete(event) {
   const todoID = parseInt(event.target.value);
   const btnIdName = event.srcElement.id;
-  console.log("TodoID:" + todoID + " ID name:" + btnIdName)
   if (btnIdName === "editBtn") {
     const { value: EditTodo } = await Swal.fire({
       title: 'Edit Todo',

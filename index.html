@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Toka-toka</title>
 
   <link rel="manifest" href="manifest.json">
@@ -17,12 +17,15 @@
   <meta name="theme-color" content="#fbb13c">
 
   <link rel="stylesheet" href="./assets/styles/pwa.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="./assets/scripts/tailwind.config.js"></script>
+  <link rel="stylesheet" href="./assets/styles/animation.css">
+  <link rel="stylesheet" href="./assets/styles/main.css">
 </head>
 
 <body class="dark:bg-[#140c00]">
-  <main class="container mx-auto lg:w-1/2">
+  <div id="loader" class="flex justify-center items-center w-screen h-screen bg-[#fbb13cff]">
+    <img src="./assets/illustrations/Logo.svg" alt="Logo.svg" class="heartbeat">
+  </div>
+  <main class="hidden container mx-auto lg:w-1/2" id="main">
     <div class="flex flex-col justify-center gap-y-5 px-5 lg:px-0">
       <div class="flex flex-col items-center">
         <img src="./assets/illustrations/TodoApp.svg" alt="Todo.svg" class="w-full lg:w-1/2">
@@ -104,12 +107,8 @@
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script type="module" src="./assets/scripts/IDB.js"></script>
   <script type="module" src="./assets/scripts/main.js"></script>
-  <script type="module" src="./assets/scripts/settings.js"></script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js');
-    }
-  </script>
+  <script src="./assets/scripts/registerSW.js"></script>
+  <script src="./assets/scripts/loader.js"></script>
 </body>
 
 </html>

@@ -17,12 +17,15 @@
   <meta name="theme-color" content="#fbb13c">
 
   <link rel="stylesheet" href="./assets/styles/pwa.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="./assets/scripts/tailwind.config.js"></script>
+  <link rel="stylesheet" href="./assets/styles/animation.css">
+  <link rel="stylesheet" href="./assets/styles/main.css">
 </head>
 
 <body class="dark:bg-[#140c00]">
-  <main class="container mx-auto lg:w-1/2">
+  <div id="loader" class="flex justify-center items-center w-screen h-screen bg-[#fbb13cff]">
+    <img src="./assets/illustrations/Logo.svg" alt="Logo.svg" class="">
+  </div>
+  <main class="hidden container mx-auto lg:w-1/2" id="main">
     <div class="flex flex-col justify-center gap-y-5 px-5 lg:px-0">
       <div class="flex justify-center pt-10">
         <img src="./assets/illustrations/Settings.svg" alt="Logo.png" class="w-full lg:w-1/2">
@@ -85,6 +88,7 @@
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script type="module" src="./assets/scripts/IDB.js"></script>
   <script type="module" src="./assets/scripts/settings.js"></script>
+  <script src="./assets/scripts/loader.js"></script>
 </body>
 
 </html>
