@@ -40,10 +40,13 @@ function Reset() {
   Swal.fire({
     title: 'Are you sure?',
     text: 'Do you really want to delete all of the information? This process cannot be undone',
-    icon: 'warning',
     showCancelButton: true,
     confirmButtonColor: '#d33',
-    confirmButtonText: 'Delete All item'
+    confirmButtonText: 'Delete All item',
+    color: '#FFFFFF',
+    background: '#fbb13cff',
+    confirmButtonColor: '#d81159ff',
+    icon: 'warning',
   }).then((result) => {
     if (result.isConfirmed) {
       clear();

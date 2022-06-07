@@ -49,6 +49,7 @@ const todoCreateElements = (id, category, title, date) => {
   todoEditbtn.setAttribute("class", "font-bold bg-[#218380ff] text-white p-2 rounded fill-white");
   todoEditbtn.setAttribute("id", "editBtn");
   todoEditbtn.setAttribute("data-id", id);
+  todoEditbtn.setAttribute("data-title", title);
   todoEditbtn.setAttribute("data-category", category);
   todoEditbtn.setAttribute("data-date", date);
 
@@ -121,7 +122,10 @@ async function btnAdd(event) {
     inputLabel: 'Create a new task to be added to your To-do List',
     inputPlaceholder: 'Input new Todo',
     showCancelButton: true,
-    confirmButtonText: 'Add'
+    confirmButtonText: 'Add',
+    color: '#FFFFFF',
+    background: '#fbb13cff',
+    confirmButtonColor: '#218380ff',
   })
   if (Todo) {
     add(getAllKeys.length, btnCategory, Todo);
@@ -130,7 +134,9 @@ async function btnAdd(event) {
       text: 'Successfully added a Todo',
       title: 'Successful',
       confirmButtonText: 'Great!',
-      allowOutsideClick: false
+      color: '#FFFFFF',
+      background: '#fbb13cff',
+      allowOutsideClick: false,
     }).then((result) => {
       if (result.isConfirmed) {
         window.location.reload();
@@ -141,18 +147,22 @@ async function btnAdd(event) {
 
 async function btnEditDelete(event) {
   const todoID = parseInt(event.target.getAttribute("data-id"))
+  const todoTitle = event.target.getAttribute("data-title")
   const todoCategory = event.target.getAttribute("data-category")
   const todoDate = event.target.getAttribute("data-date")
   const btnIdName = event.srcElement.id;
-  console.log(typeof todoID)
   if (btnIdName === "editBtn") {
     const { value: EditTodo } = await Swal.fire({
       title: 'Edit Todo',
       input: 'text',
+      inputValue: todoTitle,
       inputLabel: 'Edit the information of selected To-do',
       inputPlaceholder: 'Edit Todo',
       showCancelButton: true,
-      confirmButtonText: 'Edit'
+      confirmButtonText: 'Edit',
+      color: '#FFFFFF',
+      background: '#fbb13cff',
+      confirmButtonColor: '#218380ff',
     })
     if (EditTodo) {
       set(todoID, todoCategory, EditTodo, todoDate)
@@ -161,6 +171,9 @@ async function btnEditDelete(event) {
         text: 'Successfully edited the informations',
         title: 'Successful',
         confirmButtonText: 'Great!',
+        color: '#FFFFFF',
+        background: '#fbb13cff',
+        confirmButtonColor: '#218380ff',
         allowOutsideClick: false
       }).then((result) => {
         if (result.isConfirmed) {
@@ -176,7 +189,10 @@ async function btnEditDelete(event) {
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#d33',
-      confirmButtonText: 'Delete item'
+      confirmButtonText: 'Delete item',
+      color: '#FFFFFF',
+      background: '#fbb13cff',
+      confirmButtonColor: '#d81159ff',
     }).then((result) => {
       if (result.isConfirmed) {
         del(todoID);
