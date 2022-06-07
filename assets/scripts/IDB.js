@@ -16,15 +16,15 @@ const db = await openDB(DBNAME, 1, {
 export async function get(key) {
   return (await db).get(DBOS, key);
 };
-export async function set(todoID, todoCategory, todoTitle, todoBody) {
+export async function set(todoID, todoCategory, todoTitle, todoDate) {
   return (await db).put(DBOS, {
     id: todoID,
+    category: todoCategory,
     title: todoTitle,
-    date: Date(),
-    body: todoBody,
+    date: todoDate
   })
 };
-export async function add(todoID, todoCategory, todoTitle, todoBody) {
+export async function add(todoID, todoCategory, todoTitle) {
   const monthNames = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
   ];
@@ -38,8 +38,7 @@ export async function add(todoID, todoCategory, todoTitle, todoBody) {
     id: todoID,
     category: todoCategory,
     title: todoTitle,
-    date: `${currentMonth} ${today} ${currentYear}  ${time} `,
-    body: todoBody,
+    date: `${currentMonth} ${today} ${currentYear}  ${time} `
   })
 };
 export async function del(key) {

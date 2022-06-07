@@ -551,6 +551,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100%;
 }
 
+.w-1\/2 {
+  width: 50%;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -565,6 +569,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .items-center {
   align-items: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
 }
 
 .justify-center {
@@ -594,6 +602,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .gap-x-2 {
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
+}
+
+.break-words {
+  overflow-wrap: break-word;
 }
 
 .rounded-xl {
@@ -638,6 +650,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .bg-\[\#d81159ff\] {
   background-color: #d81159ff;
+}
+
+.bg-gray-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
 .fill-white {
@@ -713,6 +730,32 @@ Ensure the default browser behavior of the `hidden` attribute.
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+svg {
+  pointer-events: none;
+}
+
+@media (display-mode: standalone) {
+  html {
+    -ms-overflow-style: none;
+    /* for Internet Explorer, Edge */
+    scrollbar-width: none;
+    /* for Firefox */
+    overflow-y: scroll;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+    supported by Chrome, Edge, Opera and Firefox */
+  }
+}
+
 .dark .dark\:bg-\[\#140c00\] {
   --tw-bg-opacity: 1;
   background-color: rgb(20 12 0 / var(--tw-bg-opacity));
@@ -725,6 +768,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .dark .dark\:fill-black {
   fill: #000;
+}
+
+.dark .dark\:fill-white {
+  fill: #fff;
 }
 
 .dark .dark\:text-white {

@@ -16,14 +16,12 @@
   <meta name="msapplication-TileColor" content="#fbb13c">
   <meta name="theme-color" content="#fbb13c">
 
-  <link rel="stylesheet" href="./assets/styles/pwa.css">
-  <link rel="stylesheet" href="./assets/styles/animation.css">
   <link rel="stylesheet" href="./assets/styles/main.css">
 </head>
 
 <body class="dark:bg-[#140c00]">
   <div id="loader" class="flex justify-center items-center w-screen h-screen bg-[#fbb13cff]">
-    <img src="./assets/illustrations/Logo.svg" alt="Logo.svg" class="">
+    <img src="./assets/illustrations/Logo.svg" alt="Logo.svg" class="heartbeat">
   </div>
   <main class="hidden container mx-auto lg:w-1/2" id="main">
     <div class="flex flex-col justify-center gap-y-5 px-5 lg:px-0">
@@ -34,12 +32,12 @@
         <h1 class="w-full text-xl font-bold dark:text-white">Preferences</h1>
         <div class="flex items-center">
           <button onclick="toggleDarkMode" id="toggleDarkMode"
-            class="p-2 cursor-pointer shadow-md rounded-xl bg-black fill-white text-white font-bold dark:bg-white dark:text-black">
+            class="p-2 cursor-pointer shadow-md rounded-xl bg-black fill-white text-white font-bold dark:bg-white dark:text-black dark:fill-black">
             <svg id="lightIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
               <path
                 d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z" />
             </svg>
-            <svg id="darkIcon" class="fill-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
+            <svg id="darkIcon" class="hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24"
               height="24">
               <path fill="none" d="M0 0h24v24H0z" />
               <path

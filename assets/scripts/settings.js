@@ -8,26 +8,29 @@ function toggleDarkMode() {
   if (document.documentElement.classList.contains('dark')) {
     document.documentElement.classList.remove('dark');
     window.localStorage.setItem('theme', '');
-    document.querySelector("#lightIcon").classList.remove("hidden");
-    document.querySelector("#darkIcon").classList.add("hidden");
+    lightIcon.classList.remove("hidden");
+    darkIcon.classList.add("hidden");
   }
   else {
     document.documentElement.classList.add('dark');
     window.localStorage.setItem('theme', 'dark');
-    document.querySelector("#lightIcon").classList.add("hidden");
-    document.querySelector("#darkIcon").classList.remove("hidden");
+    darkIcon.classList.remove("hidden");
+    lightIcon.classList.add("hidden");
   }
 }
 
+const lightIcon = document.querySelector("#lightIcon");
+const darkIcon = document.querySelector("#darkIcon");
+
 if (window.localStorage.getItem('theme', 'dark')) {
   document.documentElement.classList.add('dark');
-  document.querySelector("#lightIcon").classList.add("hidden");
-  document.querySelector("#darkIcon").classList.remove("hidden");
+  lightIcon.classList.add("hidden");
+  darkIcon.classList.remove("hidden");
 }
 else {
   document.documentElement.classList.remove('dark');
-  document.querySelector("#lightIcon").classList.remove("hidden");
-  document.querySelector("#darkIcon").classList.add("hidden");
+  lightIcon.classList.remove("hidden");
+  darkIcon.classList.add("hidden");
 }
 
 // Reset Button
