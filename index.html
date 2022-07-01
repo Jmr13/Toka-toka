@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Toka-toka</title>
 
+  <script src="./assets/scripts/main.js"></script>
+
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/x-icon" href="./assets/pwa-assets/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/pwa-assets/apple-touch-icon.png">
@@ -20,11 +22,10 @@
 </head>
 
 <body class="dark:bg-[#140c00]">
-  <div id="loader" class="flex justify-center items-center w-screen h-screen bg-[#fbb13cff]">
-    <img src="./assets/illustrations/Logo.svg" alt="Logo.svg" class="heartbeat">
-  </div>
-  <main class="hidden container mx-auto lg:w-1/2" id="main">
-    <div class="flex flex-col justify-center gap-y-5 px-5 lg:px-0 h-screen">
+  <script src="./assets/scripts/theme.js"></script>
+
+  <main class="container mx-auto lg:w-1/2" id="main">
+    <div class="flex flex-col justify-center gap-y-5 px-5 lg:px-0 mt-20 mb-52 sm:mt-32 sm:mb-56 md:mt-48 md:mb-72 lg:my-0 h-screen">
       <div class="flex flex-col items-center">
         <img src="./assets/illustrations/TodoApp.svg" alt="Todo.svg" class="w-full lg:w-1/2">
       </div>
