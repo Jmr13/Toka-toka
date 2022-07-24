@@ -97,7 +97,13 @@ getAllKeys.forEach(key => {
 /* Get Quantity of all Todos */
 const QofAllKeys = await countKeys();
 const QTodo = document.querySelector("#TodoQuantity");
-QTodo.textContent = `You have ${QofAllKeys} task(s)`;
+if (QofAllKeys == 0) {
+  QTodo.textContent = `You have no tasks`;
+  document.querySelector("#completeSVG").classList.remove("hidden");
+}
+else {
+  QTodo.textContent = `You have ${QofAllKeys} task(s)`;
+}
 
 // Button Functions
 const addButtonPersonal = document.querySelector("#btnPersonal");
